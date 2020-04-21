@@ -34,6 +34,39 @@
 
 
 
+/************************************************************************* iconos */
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?uuhjfr');
+    src:  url('../fonts/icomoon.eot?uuhjfr#iefix') format('embedded-opentype'),
+      url('../fonts/icomoon.ttf?uuhjfr') format('truetype'),
+      url('../fonts/icomoon.woff?uuhjfr') format('woff'),
+      url('../fonts/icomoon.svg?uuhjfr#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  [class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-menu:before {
+    content: "\e9bd";
+  }
+
+
 
 /************************************************************************ header */
   header {
@@ -381,3 +414,141 @@ h2{
     color: white;
 }
 
+/********************************************************* Button menu  */
+
+.burger-button{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,.8);
+    display: none;
+    line-height: 40px;
+    text-align: center;
+    position: fixed;
+    z-index: 2;
+    left: 7px;
+    top: 7px;
+    color: white;
+}
+
+
+
+/************************************************************ Media Querys */
+
+
+/* Desktop first empezar desde Media Query mayor */
+@media screen and (max-width: 1023px) {
+
+    .container{
+        padding: 0 1em;
+    }
+
+}
+
+@media screen and (max-width: 767px){
+
+    h2 {
+        font-size: 1.2em;
+        margin: .5em 0;
+    }
+
+    .burger-button{
+        display: block;
+    }
+
+    .header{
+        display: block;
+        height: auto;
+        align-items: center;
+    }
+
+    .header a{
+        justify-content: center;
+        height: 40px;
+        font-size: 2em;
+        text-decoration: underline;
+        margin-bottom: .5em;
+    }
+
+    /* 
+    .logo{
+        display: flex;
+        align-items: center;
+    } */
+    /* .logo-image{
+        width: 50%;
+    } */
+
+    .logo{
+        text-align: center;
+    }
+
+    .menu {
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        position: fixed;
+        background: rgba(5, 111, 255,.8);
+        z-index: 1;
+        top:0;
+        bottom: 0;
+        left: -110vw;
+        width: 100vw;
+        height: max-content;
+        transition:  .3s;
+    }
+
+    .menu.is-active {
+        left: 0;
+    }
+
+    .hero h1{
+        font-size: 2em;;
+        size: auto;
+    }
+
+    .project{
+        display: block;
+    }
+/* 
+    .project-imageContainer {
+        width: inherit;
+    } */
+
+    .project-details{
+        width: auto;
+        /* font-size: 10px; */
+    }
+
+      .project-course, .project-date, .project-url { 
+        margin: .3em 0;
+      }
+
+      .project-course, .project-date, .project-url { 
+        margin: .4em 0;
+      }
+
+      .project-title {
+        font-size: 1.5em;
+        margin-bottom: .3em;
+      }
+      .project-url {
+        font-size: 1em;
+    
+      }
+      .project-course {
+        font-size: .7em;
+    
+      }
+      .project-date {
+        font-size: 1em;
+    
+      }
+      .project-description {
+        font-size: 1.1em;
+    
+      }
+
+}
